@@ -15,6 +15,7 @@ public partial class Enemy : CharacterBody2D
 	
 	// Audios
 	[Export] public AudioStreamPlayer2D SfxPlayer;
+	[Export] public AudioStreamPlayer2D BurstPlayer;
 	[Export] public AudioStream PatrolSfx;
 	[Export] public AudioStream ChaseSfx;
 	[Export] public AudioStream AttackSfx;
@@ -203,6 +204,11 @@ public void PlayStateSfx(string state)
 	{
 		SfxPlayer.Stream = sfx;
 		SfxPlayer.Play();
+	}
+	if (SfxPlayer != null && sfx != null && (sfx == AttackSfx || sfx == SummonSfx))
+	{
+		BurstPlayer.Stream = sfx;
+		BurstPlayer.Play();
 	}
 }
 
