@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs0elryjvpcg7"]
+
+[ext_resource type="Script" uid="uid://c64weyy7l02j1" path="res://Scripts/Enemy.cs" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://cq228t8xp50o3" path="res://Assets/SillyAssets/icon.svg" id="2_afpow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
+size = Vector2(106, 108)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_1f0kj")
+MoveSpeed = 200.0
+PatrolPointCount = 20
+Radius = 300.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.156863, 0.129412, 1)
+texture = ExtResource("2_afpow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_iifgy")
