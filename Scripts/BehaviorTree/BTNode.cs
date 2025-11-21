@@ -1,6 +1,8 @@
 using Godot;
 using System.Collections.Generic;
 
+// From Class
+
 /// <summary>
 /// Base class for all behavior tree nodes
 /// Defines the core interface and execution states

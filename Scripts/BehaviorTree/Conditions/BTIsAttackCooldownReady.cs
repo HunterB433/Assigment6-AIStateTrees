@@ -3,7 +3,6 @@ using Godot;
 public partial class BTIsAttackCooldownReady : BTCondition
 {
 	private Enemy enemy;
-
 	public BTIsAttackCooldownReady(Enemy enemy)
 		: base(null)
 	{

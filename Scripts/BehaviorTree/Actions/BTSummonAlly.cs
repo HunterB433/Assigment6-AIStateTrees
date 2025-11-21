@@ -8,26 +8,20 @@ public partial class BTSummonAlly : BTAction
 		: base(null)
 	{
 		this.caller = caller;
-
-		actionFunc = CallHelp;
+		actionFunc = Summon;
 	}
 
-	private Status CallHelp()
+	private Status Summon()
 	{
-		var allies = caller.GetTree().GetNodesInGroup("Enemies");
-
-		foreach (Node n in allies)
+		if (caller.AllyScene == null)
 		{
-			if (n is Enemy ally && ally != caller)
-			{
-				ally.SetAssistTarget(caller.player);  
-			}
+			return Status.Failure;
 		}
-
+		Node2D ally = caller.AllyScene.Instantiate<Node2D>();
+		Node parent = caller.GetTree().CurrentScene;
+		parent.AddChild(ally);
+		ally.GlobalPosition = caller.GlobalPosition + new Vector2(80, 0);
 		caller.helpCooldownTimer = caller.HelpCooldown;
-
-		GD.Print("Enemy called for help!");
-
 		return Status.Success;
 	}
 }

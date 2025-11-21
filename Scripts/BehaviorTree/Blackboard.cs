@@ -1,6 +1,8 @@
 using Godot;
 using System.Collections.Generic;
 
+// From Starter
+
 /// <summary>
 /// Blackboard pattern: Shared memory for behavior tree
 /// Stores data that multiple nodes need to access

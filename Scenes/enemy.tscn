@@ -1,21 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs0elryjvpcg7"]
+[gd_scene load_steps=5 format=3 uid="uid://bs0elryjvpcg7"]
 
 [ext_resource type="Script" uid="uid://c64weyy7l02j1" path="res://Scripts/Enemy.cs" id="1_1f0kj"]
+[ext_resource type="PackedScene" uid="uid://bijojxthb1wgg" path="res://Scenes/ally.tscn" id="2_287tu"]
 [ext_resource type="Texture2D" uid="uid://cq228t8xp50o3" path="res://Assets/SillyAssets/icon.svg" id="2_afpow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
-size = Vector2(106, 108)
+size = Vector2(16, 15)
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["Enemies"]]
 script = ExtResource("1_1f0kj")
 MoveSpeed = 200.0
 PatrolPointCount = 20
 Radius = 300.0
+ChaseRange = 550.0
+AllyScene = ExtResource("2_287tu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.156863, 0.129412, 1)
 texture = ExtResource("2_afpow")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemies"]]
+position = Vector2(-1, 5.5)
 shape = SubResource("RectangleShape2D_iifgy")

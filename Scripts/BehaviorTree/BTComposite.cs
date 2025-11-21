@@ -1,6 +1,8 @@
 using Godot;
 using System.Collections.Generic;
 
+// From Class
+
 /// <summary>
 /// Base class for composite nodes (nodes with children)
 /// Handles child management and initialization

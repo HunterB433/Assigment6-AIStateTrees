@@ -3,12 +3,10 @@ using Godot;
 public partial class BTIsHealthLow : BTCondition
 {
 	private Enemy enemy;
-
 	public BTIsHealthLow(Enemy enemy)
 		: base(null)
 	{
 		this.enemy = enemy;
-
 		conditionFunc = Check;
 	}
 

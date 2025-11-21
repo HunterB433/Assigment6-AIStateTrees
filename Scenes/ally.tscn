@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bijojxthb1wgg"]
+
+[ext_resource type="Script" uid="uid://br62qo7rj7ril" path="res://Scripts/Ally.cs" id="1_xfkt0"]
+[ext_resource type="Texture2D" uid="uid://cq228t8xp50o3" path="res://Assets/SillyAssets/icon.svg" id="2_pdqpk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
+size = Vector2(16, 15)
+
+[node name="Ally" type="CharacterBody2D" groups=["Enemies"]]
+script = ExtResource("1_xfkt0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0.12941177, 1)
+position = Vector2(0.49999905, 1.4999981)
+scale = Vector2(0.5078125, 0.47656247)
+texture = ExtResource("2_pdqpk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemies"]]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_iifgy")

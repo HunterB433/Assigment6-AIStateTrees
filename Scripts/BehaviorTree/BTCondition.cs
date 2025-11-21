@@ -1,6 +1,8 @@
 using Godot;
 using System;
 
+// From Class
+
 /// <summary>
 /// Condition Leaf Node: Base class for condition checks
 /// Conditions evaluate game state and return Success/Failure

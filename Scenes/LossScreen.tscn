@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckoy286pg721u"]
+
+[ext_resource type="Script" uid="uid://nfd1tyacw5h8" path="res://Scripts/LossButton.cs" id="1_qa0bn"]
+
+[node name="Loss" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -130.0
+offset_top = -118.0
+offset_right = 142.0
+offset_bottom = -27.0
+theme_override_font_sizes/font_size = 66
+text = "You Lost"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="LossButton" type="Button" parent="."]
+offset_left = -23.0
+offset_top = 29.0
+offset_right = 27.0
+offset_bottom = 60.0
+text = "Retry"
+script = ExtResource("1_qa0bn")
+
+[connection signal="pressed" from="LossButton" to="LossButton" method="_on_retry_button_pressed"]

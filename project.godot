@@ -12,12 +12,16 @@ config_version=5
 
 config/name="Assigment6-AIStateTrees"
 run/main_scene="uid://c1fw441xty6vw"
-config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://Assets/SillyAssets/icon.svg"
 
 [dotnet]
 
 project/assembly_name="Assigment6-AIStateTrees"
+
+[global_group]
+
+Enemies="Put Enemies and Allies here Future Hunter"
 
 [input]
 
