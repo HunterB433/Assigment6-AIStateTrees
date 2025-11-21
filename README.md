@@ -1,9 +1,13 @@
-Welcome to the README - This assignment was very hard, but it is Done?
+Welcome to the README - This assignment was very hard, but it is Done? YES!
 
-Grade Kindly if you can - Especially on part 2 I made it similar, but didn't do everything there as more time was taken working on the BT as that was complicated
-I started work with just normal sprites (Godot Icon) had trouble sizing up sprites to fit
-Same with Tile Map
-Used Draw() to make the Health bar Instead making it its own thing
+NOTE on INSTRUCTIONS - A few parts of the doc confused me / didnt make sence to mw
+Or parts where they requested EXACT structures like "CollisionShape2D (CircleShape2D, radius: 16)"
+Sometimes something didnt work for my game so I made it slightly different to try and fit the GOAL of what was wanted
+Just not 100% specific
+
+Ex: Used Draw() to make the Health bar Instead making it its own thing
+
+ALSO - I change the Sprites after making this, so it will look more polished in game : )
 
 
 Seen Below is my testing
@@ -29,4 +33,10 @@ REGARDLESS - You can see the ally summoned here, they are small and yellow and d
 
 When attacked to <20 hp, enemy flees
 <img width="1078" height="565" alt="Screenshot 2025-11-20 215502" src="https://github.com/user-attachments/assets/890d5154-941e-4743-bf78-fe92119620d9" />
+
+For the extra 2 things I did 
+1: Draw detection range circles in debug mode
+2: Add sound effects for each behavior
+
+Hope ya like em
 
