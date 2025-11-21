@@ -4,6 +4,7 @@ public partial class BTFleeFromPlayer : BTAction
 {
 	private Enemy enemy;
 	private float speed;
+	
 	public BTFleeFromPlayer(Enemy enemy, float speed)
 		: base(null)
 		{
@@ -16,6 +17,8 @@ public partial class BTFleeFromPlayer : BTAction
 	{
 		if (enemy.player == null)
 			return Status.Failure;
+		
+		enemy.PlayStateSfx("Flee");
 		Vector2 dir = (enemy.GlobalPosition - enemy.player.GlobalPosition).Normalized();
 		enemy.Velocity = dir * speed;
 		enemy.MoveAndSlide();

@@ -12,6 +12,7 @@ public partial class BTAttackPlayer : BTAction
 	}
 	private Status Attack()
 	{
+		enemy.PlayStateSfx("Attack");
 		enemy.DoAttack();
 		return Status.Running;  
 	}

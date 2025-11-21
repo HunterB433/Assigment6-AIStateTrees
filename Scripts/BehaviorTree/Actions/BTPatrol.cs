@@ -4,6 +4,8 @@ public partial class BTPatrol : BTAction
 {
 	private int patrolIndex = 0;
 	private Vector2[] points;
+	private Enemy enemy;
+	
 	public BTPatrol(Vector2[] patrolPoints, float speed)
 		: base(null)
 	{
@@ -13,9 +15,15 @@ public partial class BTPatrol : BTAction
 	}
 
 	private float speed;
+		public override void Initialize(Node2D agent, Blackboard blackboard)
+	{
+		base.Initialize(agent, blackboard);
+		enemy = agent as Enemy; 
+	}
 
 	private Status ExecutePatrol()
 	{
+		enemy?.PlayStateSfx("Patrol");
 		if (points == null || points.Length == 0)
 			return Status.Failure;
 		var pos = agent.GlobalPosition;

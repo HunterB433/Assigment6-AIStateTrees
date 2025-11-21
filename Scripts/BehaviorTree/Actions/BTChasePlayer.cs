@@ -6,6 +6,8 @@ public partial class BTChasePlayer : BTAction
 	private float speed;
 	private float stopDistance;
 	private float chaseRange; 
+	private Enemy enemy;
+	
 	public BTChasePlayer(CharacterBody2D agent, float speed, float stopDistance, float chaseRange)
 		: base(null)
 		{
@@ -15,9 +17,17 @@ public partial class BTChasePlayer : BTAction
 			this.chaseRange = chaseRange;
 			actionFunc = Chase;
 		}
+		
+
+	public override void Initialize(Node2D agent, Blackboard blackboard)
+	{
+		base.Initialize(agent, blackboard);
+		enemy = agent as Enemy; 
+	}
 
 	private Status Chase()
 	{
+		
 		Node2D player = agent.GetTree().Root.GetNodeOrNull<Node2D>("Main/Player");
 		if (player == null)
 			return Status.Failure;
@@ -28,6 +38,7 @@ public partial class BTChasePlayer : BTAction
 			agent.MoveAndSlide();
 			return Status.Failure;  
 		}
+		enemy?.PlayStateSfx("Chase");
 		if (dist <= stopDistance)
 		{
 			agent.Velocity = Vector2.Zero;
